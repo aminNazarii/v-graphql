@@ -1,0 +1,10 @@
+/node_modules
+/public
+
+*.xml
+
+*.xml
+
+.idea/vcs.xml
+
+.idea/v-graphql.iml
