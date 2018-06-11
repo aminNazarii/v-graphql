@@ -20,7 +20,21 @@ $ yarn add v-graphql
 
 ## Usage
 ```js
+import Vue from 'vue';
 import grahpql from 'v-graphql';
+window.$graphql = graphql;
+```
+
+#Headers
+```js
+graphql.axios.defaults.baseURL = 'http://127.0.0.1:8080';
+graphql.axios.defaults.headers.common['Authorization'] = 'Access-token';
+graphql.axios.defaults.headers.post['Content-Type'] = 'application/json';
+graphql.axios.defaults.headers.post['Accept'] = 'application/json';
+```
+
+- Use
+```js
 Vue.use(grahpql);
 ```
 
@@ -59,15 +73,6 @@ export default {
 ```js
 this.$graphql.setResources(require('./graphql.js'));
 ```
-
-#Headers
-```js
-this.$graphql.axios.defaults.baseURL = 'http://127.0.0.1:8080';
-this.$graphql.axios.defaults.headers.common['Authorization'] = 'Your-Access-token'';
-this.$graphql.axios.defaults.headers.post['Content-Type'] = 'application/json';
-this.$graphql.axios.defaults.headers.post['Accept'] = 'application/json';
-```
-
 
 ### available methods
 - query
