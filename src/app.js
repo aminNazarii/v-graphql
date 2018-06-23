@@ -38,7 +38,7 @@ export default {
    * @returns {AxiosPromise<any>}
    */
   query(name, config = {variables: null, schema: ""}) {
-    let resource = this.recources.default.query[name];
+    let resource = this.recources.query[name];
     let schema = '';
     if (config.schema) {
       schema = '/' + config.schema;
@@ -59,7 +59,7 @@ export default {
    * @returns {AxiosPromise<any>}
    */
   mutation(name, config = {variables: null, schema: ""}) {
-    let resource = this.recources.default.mutation[name];
+    let resource = this.recources.mutation[name];
     let schema = '';
     if (config.schema) {
       schema = '/' + config.schema;
