@@ -71,7 +71,7 @@ export default {
 
 - ***Use graphql.js***
 ```js
-this.$graphql.setResources(require('./graphql.js'));
+this.$graphql.setResources(require('./graphql.js').default);
 ```
 
 ### available methods
