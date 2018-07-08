@@ -37,8 +37,12 @@ export default {
    * @param config
    * @returns {AxiosPromise<any>}
    */
-  query(name, config = {variables: null, schema: ""}) {
-    let resource = this.recources.query[name];
+  query(name, config = {query: null, variables: null, schema: ""}) {
+    let resource = config.query;
+    if (!config.query) {
+      resource = this.recources.query[name];
+    }
+
     let schema = '';
     if (config.schema) {
       schema = '/' + config.schema;
@@ -58,8 +62,12 @@ export default {
    * @param config
    * @returns {AxiosPromise<any>}
    */
-  mutation(name, config = {variables: null, schema: ""}) {
-    let resource = this.recources.mutation[name];
+  mutation(name, config = {query: null, variables: null, schema: ""}) {
+    let resource = config.query;
+    if (!config.query) {
+      resource = this.recources.mutation[name];
+    }
+
     let schema = '';
     if (config.schema) {
       schema = '/' + config.schema;
