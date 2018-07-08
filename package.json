@@ -1,6 +1,6 @@
 {
   "name": "v-graphql",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "vue package for graphql requests",
   "main": "src/app.js",
   "scripts": {
