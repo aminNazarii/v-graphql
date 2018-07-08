@@ -101,6 +101,28 @@ this.$graphql.mutation('addComment', {variables: variables})
   });
 ```
 
+# also
+- you can pass manually query to the method like below
+```js
+let variables = {text: "i like this package"};
+let queryString = `
+mutation addComment($text: String) {
+  comment: Comment(text: $text) {
+    id
+    title
+  }
+}
+`;
+
+this.$graphql.mutation({query: queryString, variables: variables})
+  .then(function (response) {
+    console.log(response);
+  }).catch(function (error) {
+    console.log(error);
+  });
+```
+
+
 # More details
 if you use another schema except default schema you can define your schema in your request
 
