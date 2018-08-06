@@ -4,6 +4,7 @@ import axios from 'axios';
 export default {
   resources: {},
   prefix: '/graphql',
+  schema: '',
   axios,
 
   /**
@@ -43,7 +44,7 @@ export default {
       resource = this.recources.query[name];
     }
 
-    let schema = '';
+    let schema = this.schema;
     if (config.schema) {
       schema = '/' + config.schema;
     }
