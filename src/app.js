@@ -4,7 +4,7 @@ import axios from 'axios';
 export default {
   resources: {},
   prefix: '/graphql',
-  schema: '',
+  schema: '', //default schema
   axios,
 
   /**
