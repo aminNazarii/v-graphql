@@ -63,7 +63,7 @@ export default {
    * @param config
    * @returns {AxiosPromise<any>}
    */
-  mutation(name = null, config = {query: null, variables: null, schema: ""}) {
+  mutation(name = null, config = {query: null, variables: null, schema: ""},options={}) {
     let resource = config.query;
     if (!config.query) {
       resource = this.recources.mutation[name];
@@ -79,6 +79,6 @@ export default {
       {
         query: resource.replace(/\s+/g, ' '),
         variables: config.variables
-      });
+      },options);
   },
 }
